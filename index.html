@@ -427,23 +427,45 @@
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Send a <span>Message</span></h2>
-        <div class="contact-content">
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Gamer Tag" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="5" placeholder="Your sparkle message..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Sparkle ✨</button>
-            </form>
+<section id="contact">
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <div class="contact-content">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+            <div style="background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid var(--accent-pink); text-align: center; transition: 0.3s; cursor: pointer;" 
+                 onclick="window.location.href='mailto:aapki-email@gmail.com'"
+                 onmouseover="this.style.boxShadow='var(--pink-glow)'" 
+                 onmouseout="this.style.boxShadow='none'">
+                <i class="fas fa-envelope-open-text" style="font-size: 2rem; color: var(--accent-pink); margin-bottom: 15px; display: block;"></i>
+                <h4 style="margin-bottom: 5px; color: var(--text-white);">Email Me</h4>
+                <p style="color: var(--accent-pink); font-size: 0.9rem; font-weight: 600;">aapki-email@gmail.com</p>
+            </div>
+
+            <div style="background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid var(--accent-purple); text-align: center; transition: 0.3s;"
+                 onmouseover="this.style.boxShadow='var(--purple-glow)'" 
+                 onmouseout="this.style.boxShadow='none'">
+                <i class="fas fa-briefcase" style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 15px; display: block;"></i>
+                <h4 style="margin-bottom: 5px; color: var(--text-white);">Business Inquiries</h4>
+                <p style="color: var(--text-gray); font-size: 0.8rem;">Open for Collabs & Sponsorships</p>
+            </div>
         </div>
-    </section>
+
+        <form class="contact-form" action="https://formspree.io/f/flustooone@gmail.com" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Gamer Tag / Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="4" placeholder="Type your sparkle message here... ✨" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" style="box-shadow: var(--pink-glow);">
+                Send to Miss Novia 🎀
+            </button>
+        </form>
+    </div>
+</section>
 
     <footer>
         <div class="social-links">
@@ -468,4 +490,5 @@
     </script>
 </body>
 </html>
+
 
