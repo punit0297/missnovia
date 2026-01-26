@@ -178,6 +178,7 @@
             overflow: hidden;
             transition: 0.3s;
             border: 1px solid var(--glass);
+            position: relative;
         }
 
         .video-card:hover {
@@ -202,7 +203,7 @@
             margin-bottom: 10px;
         }
 
-        /* --- About Section (UPDATED) --- */
+        /* --- About Section --- */
         .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -235,12 +236,6 @@
             border-radius: 15px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
-        }
-
-        .stat-card:hover {
-            border-color: var(--accent-purple);
-            transform: translateY(-5px);
         }
 
         .stat-card i {
@@ -369,7 +364,7 @@
         <h1>Hi, I’m <span>Miss Novia</span> 💖</h1>
         <p>Sweet Energy, Savage Gameplay. 🎮✨</p>
         <div class="hero-btns">
-            <a href="https://youtube.com/@missnoviaofficial?si=CG9mqIzPXywgQsI4" target="_blank" class="btn btn-yt">
+            <a href="https://youtube.com/@missnoviaofficial?si=jGgSwxDhCHhL9h2U" target="_blank" class="btn btn-yt">
                 <i class="fab fa-youtube"></i> Subscribe Now
             </a>
             <a href="#contact" class="btn btn-contact">Get In Touch</a>
@@ -377,9 +372,24 @@
     </section>
 
     <section id="videos">
-        <h2 class="section-title">Latest <span>Streams</span></h2>
-        <div class="video-grid" id="videoGrid">
-            <p style="text-align: center; grid-column: 1/-1;">Fetching pookie vibes... ✨</p>
+        <h2 class="section-title">Must Watch <span>Videos</span></h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/jUF-KZTYPGI" allowfullscreen></iframe>
+                <div class="video-info"><h3>Epic Gameplay 01 ✨</h3></div>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/RVy9KPlK2xw" allowfullscreen></iframe>
+                <div class="video-info"><h3>Savage Moments 02 🔥</h3></div>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/MNJsXYSUQYE" allowfullscreen></iframe>
+                <div class="video-info"><h3>Pookie Vibes 03 🎀</h3></div>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/9dAC1mEKrhE" allowfullscreen></iframe>
+                <div class="video-info"><h3>Daily Vlog/Gaming 04 🎮</h3></div>
+            </div>
         </div>
     </section>
 
@@ -410,9 +420,8 @@
                 </div>
             </div>
             <div class="about-image">
-                <div style="width: 100%; height: 350px; background: linear-gradient(135deg, #FF6FB1 0%, #B983FF 100%); border-radius: 30px; box-shadow: var(--pink-glow); display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; overflow: hidden;">
-                    <span style="z-index: 1;">🎮</span>
-                    <div style="position: absolute; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; top: -50px; right: -50px;"></div>
+                <div style="width: 100%; height: 350px; background: linear-gradient(135deg, #FF6FB1 0%, #B983FF 100%); border-radius: 30px; box-shadow: var(--pink-glow); display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+                    🎮
                 </div>
             </div>
         </div>
@@ -438,12 +447,11 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://youtube.com/@flustooofficial" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtube.com/@missnoviaofficial?si=jGgSwxDhCHhL9h2U" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
         </div>
-        <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2024 MISS NOVIA. Stay Sweet, Play Savage. ✨</p>
+        <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2026 MISS NOVIA. Stay Sweet, Play Savage. ✨</p>
     </footer>
 
     <script>
@@ -451,38 +459,12 @@
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        async function fetchVideos() {
-            // Using your specific channel ID
-            const channelID = 'UCv7uJ4E6UuC9R8hE5X8A_8g'; 
-            const channelURL = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
-            const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(channelURL)}`;
-
-            try {
-                const response = await fetch(apiURL);
-                const data = await response.json();
-                const videoGrid = document.getElementById('videoGrid');
-                videoGrid.innerHTML = '';
-
-                data.items.slice(0, 3).forEach(video => {
-                    const videoId = video.link.split('v=')[1];
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
-                        <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
-                        <div class="video-info">
-                            <h3>${video.title}</h3>
-                            <a href="${video.link}" target="_blank" style="color: var(--accent-pink); text-decoration: none; font-size: 0.8rem; font-weight: 700;">WATCH ON YOUTUBE</a>
-                        </div>
-                    `;
-                    videoGrid.appendChild(card);
-                });
-            } catch (error) {
-                document.getElementById('videoGrid').innerHTML = '<p>Check back later for new pookie content! 💖</p>';
-            }
-        }
-
-        window.onload = fetchVideos;
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
     </script>
 </body>
-
 </html>
