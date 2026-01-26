@@ -21,12 +21,7 @@
             --purple-glow: 0 0 15px rgba(185, 131, 255, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-dark);
@@ -35,313 +30,82 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Syne', sans-serif;
-            text-transform: uppercase;
-        }
+        h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
 
         /* --- Navbar --- */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10%;
-            background: rgba(15, 15, 15, 0.7);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 10%; background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px); z-index: 1000;
             border-bottom: 1px solid var(--glass);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent-pink);
-            text-shadow: var(--pink-glow);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-white);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-pink);
-            text-shadow: var(--pink-glow);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--accent-pink); text-shadow: var(--pink-glow); text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-white); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-pink); text-shadow: var(--pink-glow); }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
 
         /* --- Hero Section --- */
         .hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-            background: radial-gradient(circle at 50% 50%, #25162a 0%, #0f0f0f 70%);
+            height: 90vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 0 5%; background: radial-gradient(circle at 50% 50%, #25162a 0%, #0f0f0f 70%);
         }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 10px; line-height: 1.1; }
+        .hero h1 span { color: var(--accent-pink); text-shadow: var(--pink-glow); }
+        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 30px; max-width: 600px; }
+        .hero-btns { display: flex; gap: 20px; }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 10px;
-            line-height: 1.1;
-        }
-
-        .hero h1 span {
-            color: var(--accent-pink);
-            text-shadow: var(--pink-glow);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-block;
-        }
-
-        .btn-yt {
-            background: var(--yt-red);
-            color: white;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-        }
-
-        .btn-contact {
-            background: transparent;
-            border: 2px solid var(--accent-purple);
-            color: var(--accent-purple);
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: var(--purple-glow);
-        }
+        .btn { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.4s; display: inline-block; }
+        .btn-yt { background: var(--yt-red); color: white; box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); }
+        .btn-contact { background: transparent; border: 2px solid var(--accent-purple); color: var(--accent-purple); }
+        .btn:hover { transform: scale(1.05); box-shadow: var(--purple-glow); }
 
         /* --- Section Styling --- */
-        section {
-            padding: 100px 10%;
-        }
+        section { padding: 100px 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .section-title span { color: var(--accent-purple); }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-        }
+        /* --- YouTube Grid --- */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .video-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; transition: 0.3s; border: 1px solid var(--glass); position: relative; }
+        .video-card:hover { transform: translateY(-10px); border-color: var(--accent-pink); box-shadow: var(--pink-glow); }
+        .video-card iframe { width: 100%; aspect-ratio: 16/9; border: none; }
+        .video-info { padding: 20px; }
 
-        .section-title span {
-            color: var(--accent-purple);
-        }
+        /* --- About --- */
+        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { color: var(--text-gray); line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
+        .highlight-text { color: var(--accent-pink); font-weight: 600; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
+        .stat-card { background: var(--glass); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        .stat-card i { font-size: 1.5rem; color: var(--accent-pink); margin-bottom: 10px; }
 
-        /* --- YouTube Section --- */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .video-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: 0.3s;
-            border: 1px solid var(--glass);
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-pink);
-            box-shadow: var(--pink-glow);
-        }
-
-        .video-card iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-        }
-
-        .video-info {
-            padding: 20px;
-        }
-
-        .video-info h3 {
-            font-size: 1rem;
-            color: var(--text-white);
-            margin-bottom: 10px;
-        }
-
-        /* --- About Section --- */
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .highlight-text {
-            color: var(--accent-pink);
-            font-weight: 600;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .stat-card {
-            background: var(--glass);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-card i {
-            font-size: 1.5rem;
-            color: var(--accent-pink);
-            margin-bottom: 10px;
-        }
-
-        /* --- Contact Section --- */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid var(--glass);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
+        /* --- Contact Section (Updated) --- */
+        .contact-content { max-width: 600px; margin: 0 auto; }
+        .contact-form { background: var(--bg-card); padding: 40px; border-radius: 30px; border: 1px solid var(--glass); }
+        .form-group { margin-bottom: 20px; }
         .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid transparent;
-            border-radius: 15px;
-            color: white;
-            font-family: inherit;
-            transition: 0.3s;
+            width: 100%; padding: 15px 20px; background: rgba(255,255,255,0.05);
+            border: 2px solid transparent; border-radius: 15px; color: white;
+            font-family: inherit; transition: 0.3s;
         }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-pink);
-            box-shadow: var(--pink-glow);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(45deg, var(--accent-pink), var(--accent-purple));
-            border: none;
-            padding: 15px;
-            color: white;
-            font-weight: 700;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-pink); box-shadow: var(--pink-glow); }
+        .submit-btn { width: 100%; background: linear-gradient(45deg, var(--accent-pink), var(--accent-purple)); border: none; padding: 15px; color: white; font-weight: 700; border-radius: 15px; cursor: pointer; transition: 0.3s; }
 
         /* --- Footer --- */
-        footer {
-            padding: 50px 10%;
-            text-align: center;
-            border-top: 1px solid var(--glass);
-        }
+        footer { padding: 50px 10%; text-align: center; border-top: 1px solid var(--glass); }
+        .social-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
+        .social-links a { font-size: 1.5rem; color: var(--text-white); transition: 0.3s; }
+        .social-links a:hover { color: var(--accent-pink); transform: scale(1.2); }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            font-size: 1.5rem;
-            color: var(--text-white);
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-pink);
-            text-shadow: var(--pink-glow);
-            transform: scale(1.2);
-        }
-
-        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                background: var(--bg-dark);
-                padding: 20px;
-                text-align: center;
-                border-bottom: 1px solid var(--glass);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; flex-direction: column; background: var(--bg-dark); padding: 20px; text-align: center; border-bottom: 1px solid var(--glass); }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            .about-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -364,7 +128,7 @@
         <h1>Hi, I’m <span>Miss Novia</span> 💖</h1>
         <p>Sweet Energy, Savage Gameplay. 🎮✨</p>
         <div class="hero-btns">
-            <a href="https://youtube.com/@missnoviaofficial?si=jGgSwxDhCHhL9h2U" target="_blank" class="btn btn-yt">
+            <a href="https://youtube.com/@missnoviaofficial" target="_blank" class="btn btn-yt">
                 <i class="fab fa-youtube"></i> Subscribe Now
             </a>
             <a href="#contact" class="btn btn-contact">Get In Touch</a>
@@ -374,22 +138,10 @@
     <section id="videos">
         <h2 class="section-title">Must Watch <span>Videos</span></h2>
         <div class="video-grid">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/jUF-KZTYPGI" allowfullscreen></iframe>
-                <div class="video-info"><h3>Epic Gameplay 01 ✨</h3></div>
-            </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/RVy9KPlK2xw" allowfullscreen></iframe>
-                <div class="video-info"><h3>Savage Moments 02 🔥</h3></div>
-            </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/MNJsXYSUQYE" allowfullscreen></iframe>
-                <div class="video-info"><h3>Pookie Vibes 03 🎀</h3></div>
-            </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/9dAC1mEKrhE" allowfullscreen></iframe>
-                <div class="video-info"><h3>Daily Vlog/Gaming 04 🎮</h3></div>
-            </div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/jUF-KZTYPGI" allowfullscreen></iframe><div class="video-info"><h3>Epic Gameplay 01 ✨</h3></div></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/RVy9KPlK2xw" allowfullscreen></iframe><div class="video-info"><h3>Savage Moments 02 🔥</h3></div></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/MNJsXYSUQYE" allowfullscreen></iframe><div class="video-info"><h3>Pookie Vibes 03 🎀</h3></div></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/9dAC1mEKrhE" allowfullscreen></iframe><div class="video-info"><h3>Daily Vlog 04 🎮</h3></div></div>
         </div>
     </section>
 
@@ -397,32 +149,15 @@
         <div class="about-container">
             <div class="about-text">
                 <h2 class="section-title" style="text-align: left;">Sweet but <span>Savage</span> 💅🔥</h2>
-                <p>
-                    <span class="highlight-text">Miss Novia</span> is the ultimate "Pookie" gamer girl who blends a soft, aesthetic vibe with high-level gaming skills. Known for her unique personality, she creates a space where pink aesthetics meet hardcore victories.
-                </p>
-                <p>
-                    Whether she's dominating the leaderboard with a <span class="highlight-text">savage clutch</span> or just vibing with her community in a wholesome stream, she brings 100% "Girl Gamer" power to every frame. Miss Novia proves that you can be a total princess and a pro player at the same time! 💖👑
-                </p>
-                
+                <p><span class="highlight-text">Miss Novia</span> is the ultimate gamer girl blending soft aesthetics with hardcore victories.</p>
                 <div class="stats-grid">
-                    <div class="stat-card">
-                        <i class="fas fa-crown"></i>
-                        <h4>Pro Gamer</h4>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-wand-sparkles"></i>
-                        <h4>Aesthetic</h4>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-bolt"></i>
-                        <h4>Savage Energy</h4>
-                    </div>
+                    <div class="stat-card"><i class="fas fa-crown"></i><h4>Pro Gamer</h4></div>
+                    <div class="stat-card"><i class="fas fa-wand-sparkles"></i><h4>Aesthetic</h4></div>
+                    <div class="stat-card"><i class="fas fa-bolt"></i><h4>Savage</h4></div>
                 </div>
             </div>
             <div class="about-image">
-                <div style="width: 100%; height: 350px; background: linear-gradient(135deg, #FF6FB1 0%, #B983FF 100%); border-radius: 30px; box-shadow: var(--pink-glow); display: flex; align-items: center; justify-content: center; font-size: 6rem;">
-                    🎮
-                </div>
+                <div style="width: 100%; height: 350px; background: linear-gradient(135deg, #FF6FB1 0%, #B983FF 100%); border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">🎮</div>
             </div>
         </div>
     </section>
@@ -430,23 +165,24 @@
     <section id="contact">
         <h2 class="section-title">Send a <span>Message</span></h2>
         <div class="contact-content">
-            <form class="contact-form">
+            <form class="contact-form" id="gmailForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Gamer Tag" required>
+                    <input type="text" id="gamerTag" placeholder="Gamer Tag" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Email" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" placeholder="Your sparkle message..."></textarea>
+                    <textarea id="message" rows="5" placeholder="Your sparkle message..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Sparkle ✨</button>
             </form>
         </div>
     </section>
-   <footer>
+
+    <footer>
         <div class="social-links">
-            <a href="https://youtube.com/@missnoviaofficial?si=jGgSwxDhCHhL9h2U" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtube.com/@missnoviaofficial" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/missnovia1/"><i class="fab fa-instagram"></i></a>
             <a href="https://discord.gg/fH3PYTK9Gw"><i class="fab fa-discord"></i></a>
         </div>
@@ -454,6 +190,7 @@
     </footer>
 
     <script>
+        // Navbar Toggle
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
@@ -464,10 +201,29 @@
                 document.getElementById('navLinks').classList.remove('active');
             });
         });
+
+        // --- GMAIL DIRECT REDIRECT (NO OUTLOOK) ---
+        document.getElementById('gmailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 1. APNI EMAIL YAHAN DALO
+            const myEmail = "apni-id@gmail.com"; 
+
+            // 2. Data Collect Karo
+            const tag = document.getElementById('gamerTag').value;
+            const sub = document.getElementById('subject').value;
+            const msg = document.getElementById('message').value;
+
+            // 3. Format Message
+            const finalSubject = encodeURIComponent(`[Fan Message] ${sub} - From: ${tag}`);
+            const finalBody = encodeURIComponent(`Hi Miss Novia,\n\n${msg}\n\nBest Regards,\n${tag}`);
+
+            // 4. Gmail Web URL (Outlook ko bypass karega)
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=${finalSubject}&body=${finalBody}`;
+
+            // 5. Open in New Tab
+            window.open(gmailUrl, '_blank');
+        });
     </script>
 </body>
 </html>
-
-
-
-
